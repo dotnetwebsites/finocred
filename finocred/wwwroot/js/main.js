@@ -5,7 +5,7 @@
     -------------------------------------*/
     var contactForm = $('#contact-form');
     if (contactForm.length) {
-        contactForm.validator().on('submit', function(e) {
+        contactForm.validator().on('submit', function (e) {
             var $this = $(this),
                 $target = contactForm.find('.form-response');
             if (e.isDefaultPrevented()) {
@@ -15,10 +15,10 @@
                     url: "php/form-process.php",
                     type: "POST",
                     data: contactForm.serialize(),
-                    beforeSend: function() {
+                    beforeSend: function () {
                         $target.html("<div class='alert alert-info'><p>Loading ...</p></div>");
                     },
-                    success: function(response) {
+                    success: function (response) {
                         var res = JSON.parse(response);
                         console.log(res);
                         if (res.success) {
@@ -27,14 +27,14 @@
                         } else {
                             if (res.message.length) {
                                 var messages = null;
-                                res.message.forEach(function(message) {
+                                res.message.forEach(function (message) {
                                     messages += "<p>" + message + "</p>";
                                 });
                                 $target.html("<div class='alert alert-success'><p>" + messages + "</p></div>");
                             }
                         }
                     },
-                    error: function() {
+                    error: function () {
                         $target.html("<div class='alert alert-success'><p>Error !!!</p></div>");
                     }
                 });
@@ -59,48 +59,48 @@ Section background image
 
     function imageFunction() {
 
-    $('[data-bg-image]').each(function () {
-    var img = $(this).data('bg-image');
-    $(this).css({
-    backgroundImage: 'url(' + img + ')',
-    });
-    });
+        $('[data-bg-image]').each(function () {
+            var img = $(this).data('bg-image');
+            $(this).css({
+                backgroundImage: 'url(' + img + ')',
+            });
+        });
     }
 
-  /*-------------------------------------
-    Progress Bar Init
-    --------------------------------------*/
+    /*-------------------------------------
+      Progress Bar Init
+      --------------------------------------*/
     if ($.fn.circleProgress !== undefined) {
 
-       $('.circle-progress').circleProgress({
+        $('.circle-progress').circleProgress({
             size: 180,
             thickness: 9,
             emptyFill: "#fb542f",
             fill: {
-              color: "#fff"
+                color: "#fff"
             },
             startAngle: 0,
-        }).on('circle-animation-progress', function(event, progress) {
-             var data_value = $(this).data('value'); 
-             var data_value_full = data_value * 100;
+        }).on('circle-animation-progress', function (event, progress) {
+            var data_value = $(this).data('value');
+            var data_value_full = data_value * 100;
             $(this).find('span').html(Math.round(data_value_full * progress) + '<i></i>');
         });
     }
     /*-------------------------------------
         Sal Init
     -------------------------------------*/
-   if(typeof sal === 'function'){
-    sal({
+    if (typeof sal === 'function') {
+        sal({
             threshold: 0.05,
             once: true
         });
 
-    if ($(window).outerWidth() < 1025) {
-        var scrollAnimations = sal();
-        scrollAnimations.disable();
+        if ($(window).outerWidth() < 1025) {
+            var scrollAnimations = sal();
+            scrollAnimations.disable();
+        }
     }
-   }
-    
+
     /*-------------------------------------
     Jquery Serch Box
     -------------------------------------*/
@@ -123,9 +123,9 @@ Section background image
             $(this).removeClass("open");
         }
     });
-     /*-------------------------------------
-    Page Preloader
-    -------------------------------------*/
+    /*-------------------------------------
+   Page Preloader
+   -------------------------------------*/
     $("#preloader").fadeOut("slow", function () {
         $(this).remove();
     });
@@ -149,7 +149,7 @@ Section background image
     /*-------------------------------------
     On Scroll 
     -------------------------------------*/
-    $(window).on('scroll', function() {
+    $(window).on('scroll', function () {
 
         // Back Top Button
         if ($(window).scrollTop() > 500) {
@@ -241,13 +241,13 @@ Section background image
             });
         };
     }
-    
-     /*-------------------------------------
-    MeanMenu activation code
-    --------------------------------------*/
+
+    /*-------------------------------------
+   MeanMenu activation code
+   --------------------------------------*/
     if ($.fn.meanmenu) {
         $('nav#dropdown').meanmenu({
-            siteLogo: "<div class='mobile-menu-nav-back'><a class='logo-mobile' href='index.html'><img src='img//logo/logo4.png' alt='logo' class='img-fluid'/></a></div>"
+            siteLogo: "<div class='mobile-menu-nav-back'><a class='logo-mobile' href='/'><img src='/img/logo/logo2.png' height='45' width='180' alt='logo' class='img-fluid'/></a></div>"
         });
     }
     /*-------------------------------------
@@ -291,9 +291,9 @@ Section background image
         return false;
     });
 
-/*-------------------------------------
-Carousel slider initiation
--------------------------------------*/
+    /*-------------------------------------
+    Carousel slider initiation
+    -------------------------------------*/
     $(".rc-carousel").each(function () {
         var carousel = $(this),
             loop = carousel.data("loop"),
@@ -399,4 +399,4 @@ Carousel slider initiation
         }
     });
 
- })(jQuery);
+})(jQuery);
