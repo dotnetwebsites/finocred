@@ -38,6 +38,36 @@ namespace finocred.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Disclaimer()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult TermsAndConditions()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Partner()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Career()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult ContactUs(ContactUs contactUs)
         {
