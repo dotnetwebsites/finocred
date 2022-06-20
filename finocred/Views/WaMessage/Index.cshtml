@@ -1,0 +1,89 @@
+﻿@using finocred.web.BusinessLayer.DTOs
+
+@model WaModel
+
+@{
+    string pass = null;
+
+    if (Context.Request.Cookies["pass"] != null)
+    {
+        pass = Context.Request.Cookies["pass"]?.ToString();
+    }
+}
+
+<section class="call-back-wrap" style="background: #8300ff;">
+    @if (Context.Request.Cookies["pass"] != null)
+    {
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-lg-6 col-md-12">
+
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="call-back-box1" style="background: none;">
+                        <h2 class="section-title">Send Whatsapp SMS</h2>
+                        <form class="message-box" method="POST">
+                            @Html.AntiForgeryToken()
+
+                            <div class="row">
+                                <div class="form-group col-lg-6">
+                                    <input type="text" minlength="10" maxlength="10" class="form-control" asp-for="Mobiles" placeholder="Mobile Number*" required>
+                                    <div class="invalid-feedback">Please Enter Mobile Number.</div>
+                                </div>
+
+                                <div class="form-group col-lg-6">
+                                    <select class="form-control" asp-for="Templates" required>
+                                        <option value="">Please Select Template*</option>
+                                        <option value="thank_you">thank_you</option>
+                                        <option selected value="applyforcreditcard">applyforcreditcard</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please Select.</div>
+                                </div>
+
+                                <div class="form-group col-lg-6">
+                                    <select class="form-control" asp-for="ImageUrl" required>
+                                        <option value="">Please Select Image*</option>
+                                        <option selected value="https://www.finocred.com/banner/finbanner.jpg">
+                                            Banner
+                                        </option>
+                                    </select>
+                                    <div class="invalid-feedback">Please Select.</div>
+                                </div>
+
+                                <div class="form-group col-lg-12" id="sendOtpDiv">
+                                    <input type="submit" value="Submit" class="item-btn btn-block" />
+                                    <a asp-action="deletewacookie" asp-controller="wamessage" class="item-btn btn-block">Reset</a>
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="container">
+            <div class="row no-gutters">
+                <form class="message-box" method="GET">
+                    @Html.AntiForgeryToken()
+
+                    <div class="row">
+                        <div class="form-group col-lg-6">
+                            <input type="password" class="form-control" asp-for="Password" placeholder="Passwrod*" required>
+                            <div class="invalid-feedback">Please Enter Password.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Submit" class="item-btn" />
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    }
+</section>

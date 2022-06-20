@@ -27,6 +27,7 @@ namespace finocred
         {
             services.AddControllersWithViews();
 
+            services.AddHttpClient();
             services.AddTransient<IEmailSender, EmailSender>();
         }
 
