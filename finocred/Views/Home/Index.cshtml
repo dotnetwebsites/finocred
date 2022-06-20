@@ -11,22 +11,22 @@
                     <h4>Instant Loan Eligibility in 2 mins</h4>
                     <h4>Find Lowest rate and Best Deals!</h4>
                     <h4>Compare & Choose from Top Banks</h4>
-                    <a href="personalloan.html" class="header-btn btn btn-light ">GET STARTED</a>
+                    <a asp-action="personal" asp-controller="loans" class="header-btn btn btn-light ">GET STARTED</a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="call-back-box1" style="background: none;">
-                    <h2 class="section-title">Apply Now For Instant Approval</h2>
+                    <h2 class="section-title">Apply now for instant approval</h2>
                     <form class="message-box" enctype="multipart/form-data" method="POST" action="javascript:void(0)" id="instantApprovalFormBefore" novalidate>
                         <div class="row">
                             <div class="form-group col-lg-6">
 
-                                <input type="text" class="form-control" name="first_name" placeholder="First Name*" required="required" id="first_name" onkeyup="this.value=this.value.replace(/[^A-z]/g,'');">
+                                <input type="text" class="form-control" name="first_name" placeholder="First Name*" required id="first_name" onkeyup="this.value=this.value.replace(/[^A-z]/g,'');">
                                 <div class="invalid-feedback">Please Enter First Name.</div>
                             </div>
                             <div class="form-group col-lg-6">
 
-                                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name*" required="required" onkeyup="this.value=this.value.replace(/[^A-z]/g,'');">
+                                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name*" required onkeyup="this.value=this.value.replace(/[^A-z]/g,'');">
                                 <div class="invalid-feedback">Please Enter Last Name.</div>
                             </div>
                             <div class="form-group col-lg-6">
@@ -44,11 +44,11 @@
 
                                 <select class="form-control" id="loan_type" name="loan_type" required="required">
                                     <option value="">Please Select Loan*</option>
-                                    <option selected="selected">Personal Loan</option>
-                                    <option>Business Loan</option>
-                                    <option>Home Loan</option>
-                                    <option>Credit Card</option>
-
+                                    <option selected="selected">Personal loan</option>
+                                    <option>Business loan</option>
+                                    <option>Home loan</option>
+                                    <option>Credit card</option>
+                                    <option>Loan against property</option>
                                 </select>
                                 <div class="invalid-feedback">Please Select Loan.</div>
                             </div>
@@ -75,11 +75,8 @@
 
                             </div>
 
-
-
-
                             <div class="form-group col-lg-12" id="sendOtpDiv">
-                                <button type="submit" name="submit" value="Submit" class="item-btn btn-block">SUBMIT</button>
+                                <input type="submit" name="submit" value="Submit" class="item-btn btn-block" />
                             </div>
 
                             <div class="form-group form-alert col-lg-12" style="display: none;">
@@ -345,13 +342,6 @@
                 <div class="slick-slide">
                     <div class="testimonial-content">
                         <div class="item-img-round">
-                            <img src="~/assets/img/partners/c9.png" alt="about">
-                        </div>
-                    </div>
-                </div>
-                <div class="slick-slide">
-                    <div class="testimonial-content">
-                        <div class="item-img-round">
                             <img src="~/assets/img/partners/c10.png" alt="about">
                         </div>
                     </div>
@@ -373,21 +363,7 @@
                 <div class="slick-slide">
                     <div class="testimonial-content">
                         <div class="item-img-round">
-                            <img src="~/assets/img/partners/c13.png" alt="about">
-                        </div>
-                    </div>
-                </div>
-                <div class="slick-slide">
-                    <div class="testimonial-content">
-                        <div class="item-img-round">
                             <img src="~/assets/img/partners/c14.png" alt="about">
-                        </div>
-                    </div>
-                </div>
-                <div class="slick-slide">
-                    <div class="testimonial-content">
-                        <div class="item-img-round">
-                            <img src="~/assets/img/partners/c15.png" alt="about">
                         </div>
                     </div>
                 </div>
@@ -401,13 +377,6 @@
                 <div class="slick-slide">
                     <div class="testimonial-content">
                         <div class="item-img-round">
-                            <img src="~/assets/img/partners/c17.png" alt="about">
-                        </div>
-                    </div>
-                </div>
-                <div class="slick-slide">
-                    <div class="testimonial-content">
-                        <div class="item-img-round">
                             <img src="~/assets/img/partners/c18.png" alt="about">
                         </div>
                     </div>
@@ -415,14 +384,99 @@
                 <div class="slick-slide">
                     <div class="testimonial-content">
                         <div class="item-img-round">
-                            <img src="~/assets/img/partners/c19.png" alt="about">
+                            <img src="~/assets/img/partners/c20.png" alt="about">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slick-slide">
+                    <div class="testimonial-content">
+                        <div class="item-img-round">
+                            <img src="~/assets/img/partners/d1.png" alt="about">
                         </div>
                     </div>
                 </div>
                 <div class="slick-slide">
                     <div class="testimonial-content">
                         <div class="item-img-round">
-                            <img src="~/assets/img/partners/c20.png" alt="about">
+                            <img src="~/assets/img/partners/d2.png" alt="about">
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide">
+                    <div class="testimonial-content">
+                        <div class="item-img-round">
+                            <img src="~/assets/img/partners/d3.png" alt="about">
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide">
+                    <div class="testimonial-content">
+                        <div class="item-img-round">
+                            <img src="~/assets/img/partners/d4.png" alt="about">
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide">
+                    <div class="testimonial-content">
+                        <div class="item-img-round">
+                            <img src="~/assets/img/partners/d5.png" alt="about">
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide">
+                    <div class="testimonial-content">
+                        <div class="item-img-round">
+                            <img src="~/assets/img/partners/d6.png" alt="about">
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide">
+                    <div class="testimonial-content">
+                        <div class="item-img-round">
+                            <img src="~/assets/img/partners/d7.png" alt="about">
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide">
+                    <div class="testimonial-content">
+                        <div class="item-img-round">
+                            <img src="~/assets/img/partners/d8.png" alt="about">
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide">
+                    <div class="testimonial-content">
+                        <div class="item-img-round">
+                            <img src="~/assets/img/partners/d9.png" alt="about">
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide">
+                    <div class="testimonial-content">
+                        <div class="item-img-round">
+                            <img src="~/assets/img/partners/d10.png" alt="about">
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide">
+                    <div class="testimonial-content">
+                        <div class="item-img-round">
+                            <img src="~/assets/img/partners/d11.png" alt="about">
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide">
+                    <div class="testimonial-content">
+                        <div class="item-img-round">
+                            <img src="~/assets/img/partners/d12.png" alt="about">
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide">
+                    <div class="testimonial-content">
+                        <div class="item-img-round">
+                            <img src="~/assets/img/partners/d13.png" alt="about">
                         </div>
                     </div>
                 </div>
@@ -466,27 +520,36 @@
                     </div>
                     <div>
                         <p style="text-align: center;" class="citu">
-                            <a href="personalloan.html">Personal Loan In Ahmedabad | </a>
-                            <a href="personalloan.html">Personal Loan In Indore | </a>
-                            <a href="personalloan.html">Personal Loan In Bhopal | </a>
-                            <a href="personalloan.html">Personal Loan in Bangalore |</a>
-                            <a href="personalloan.html">Personal Loan in Hyderabad |</a>
-                            <a href="personalloan.html"> Personal Loan in Pune |</a>
-                            <a href="personalloan.html"> Personal Loan in Mumbai |</a>
-                            <a href="#"> Personal Loan in Delhi |</a>
-                            <a href="personalloan.html"> Personal Loan in Chennai |</a>
-                            <a href="#"> Personal Loan in Kolkata |</a>
-                            <a href="personalloan.html"> Personal Loan in Noida |</a>
-                            <a href="personalloan.html">Personal Loan in Vadodara |</a>
-                            <a href="personalloan.html"> Personal Loan in Coimbatore |</a>
-                            <a href="personalloan.html"> Personal Loan in Jaipur |</a>
-                            <a href="personalloan.html"> Personal Loan in Navi Mumbai |</a>
-                            <a href="personalloan.html"> Personal Loan in Lucknow |</a>
-                            <a href="personalloan.html"> Personal Loan in Bihar |</a>
-                            <a href="personalloan.html"> Personal Loan in Bhubaneswar |</a>
-                            <a href="personalloan.html"> Personal Loan in Nashik |</a>
-                            <a href="personalloan.html"> Personal Loan in Raipur |</a>
-                            <a href="personalloan.html"> Personal Loan in Jabalpur |</a>
+                            <a href="javascript:;">Bhopal | </a>
+                            <a href="javascript:;">Jabalpur |</a>
+                            <a href="javascript:;">Indore | </a>
+                            <a href="javascript:;">Gwalior | </a>
+                            <a href="javascript:;">Ujjain | </a>
+                            <a href="javascript:;">Dewas | </a>
+                            <a href="javascript:;">Satna | </a>
+                            <a href="javascript:;">Rewa | </a>
+                            <a href="javascript:;">Chhindwara | </a>
+                            <a href="javascript:;">Katni | </a>
+                            <a href="javascript:;">Hoshangabad | </a>
+                            <a href="javascript:;">Itarsi | </a>
+                            <a href="javascript:;">Bangalore |</a>
+                            <a href="javascript:;">Hyderabad |</a>
+                            <a href="javascript:;">Ahmedabad | </a>
+                            <a href="javascript:;">Pune |</a>
+                            <a href="javascript:;">Mumbai |</a>
+                            <a href="javascript:;">Delhi |</a>
+                            <a href="javascript:;">Chennai |</a>
+                            <a href="javascript:;">Kolkata |</a>
+                            <a href="javascript:;">Noida |</a>
+                            <a href="javascript:;">Vadodara |</a>
+                            <a href="javascript:;">Coimbatore |</a>
+                            <a href="javascript:;">Jaipur |</a>
+                            <a href="javascript:;">Navi Mumbai |</a>
+                            <a href="javascript:;">Lucknow |</a>
+                            <a href="javascript:;">Bihar |</a>
+                            <a href="javascript:;">Bhubaneswar |</a>
+                            <a href="javascript:;">Nashik |</a>
+                            <a href="javascript:;">Raipur |</a>
                         </p>
                     </div>
 
