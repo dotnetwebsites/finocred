@@ -68,6 +68,12 @@ namespace finocred.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult EmiCalculator()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult ContactUs(ContactUs contactUs)
         {

@@ -17,21 +17,25 @@
         <div class="container">
             <div class="row no-gutters">
                 <div class="col-lg-6 col-md-12">
-
-                </div>
-                <div class="col-lg-6 col-md-12">
                     <div class="call-back-box1" style="background: none;">
                         <h2 class="section-title">Send Whatsapp SMS</h2>
                         <form class="message-box" method="POST">
                             @Html.AntiForgeryToken()
 
                             <div class="row">
-                                <div class="form-group col-lg-6">
-                                    <input type="text" minlength="10" maxlength="10" class="form-control" asp-for="Mobiles" placeholder="Mobile Number*" required>
+                                @if (TempData["msg"] != null)
+                                {
+                                    <div class="form-group col-lg-12">
+                                        <p style="color:white">@TempData["msg"].ToString()</p>
+                                    </div>
+                                }
+
+                                <div class="form-group col-lg-12">
+                                    <textarea asp-for="Mobiles" rows="8" cols="8" class="form-control" placeholder="9876543210,1234567890..."></textarea>
                                     <div class="invalid-feedback">Please Enter Mobile Number.</div>
                                 </div>
 
-                                <div class="form-group col-lg-6">
+                                <div class="form-group col-lg-12">
                                     <select class="form-control" asp-for="Templates" required>
                                         <option value="">Please Select Template*</option>
                                         <option value="thank_you">thank_you</option>
@@ -40,7 +44,7 @@
                                     <div class="invalid-feedback">Please Select.</div>
                                 </div>
 
-                                <div class="form-group col-lg-6">
+                                <div class="form-group col-lg-12">
                                     <select class="form-control" asp-for="ImageUrl" required>
                                         <option value="">Please Select Image*</option>
                                         <option selected value="https://www.finocred.com/banner/finbanner.jpg">
@@ -52,7 +56,7 @@
 
                                 <div class="form-group col-lg-12" id="sendOtpDiv">
                                     <input type="submit" value="Submit" class="item-btn btn-block" />
-                                    <a asp-action="deletewacookie" asp-controller="wamessage" class="item-btn btn-block">Reset</a>
+                                    <a asp-action="deletewacookie" asp-controller="wamessage" class="item-btn btn-block" style="text-align:center">Lock</a>
                                 </div>
 
                             </div>
