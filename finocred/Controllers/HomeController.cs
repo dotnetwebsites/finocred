@@ -90,22 +90,22 @@ namespace finocred.Controllers
             {
                 try
                 {
-                    string[] blockedcontent = _configuration["blocked_keyword_for_mail"].ToString().Split(",");
+                    string[] blockedcontent = _configuration["blocked_keyword_for_mail"].ToString().ToLower().Split(",");
                     bool blocked = false;
 
-                    if (blockedcontent.Contains(contactUs?.FirstName))
+                    if (blockedcontent.Contains(contactUs?.FirstName.ToLower()))
                         blocked = true;
 
-                    if (blockedcontent.Contains(contactUs?.LastName))
+                    if (blockedcontent.Contains(contactUs?.LastName.ToLower()))
                         blocked = true;
 
-                    if (blockedcontent.Contains(contactUs?.PhoneNumber))
+                    if (blockedcontent.Contains(contactUs?.PhoneNumber.ToLower()))
                         blocked = true;
 
-                    if (blockedcontent.Contains(contactUs?.Subject))
+                    if (blockedcontent.Contains(contactUs?.Subject.ToLower()))
                         blocked = true;
 
-                    if (blockedcontent.Contains(contactUs?.Message))
+                    if (blockedcontent.Contains(contactUs?.Message.ToLower()))
                         blocked = true;
 
                     if (blocked)
