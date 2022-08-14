@@ -60,31 +60,44 @@
                         <p>Our team will get back to you within 24 hrs.</p>
                     </div>
                     <form class="message-box" method="post">
+                        @Html.AntiForgeryToken()
+                        @if (TempData["msg"] != null)
+                        {
+                            <div class="text-success">@TempData["msg"].ToString()</div>
+                        }
+
+                        <div class="text-danger" asp-validation-summary="All"></div>
                         <div class="row gutters-10">
                             <div class="col-lg-6 form-group">
-                                <input asp-for="FirstName" class="form-control" placeholder="First Name*">
+                                <input asp-for="FirstName" class="form-control" placeholder="First Name *">
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="col-lg-6 form-group">
-                                <input asp-for="LastName" class="form-control" placeholder="Last Name*">
+                                <input asp-for="LastName" class="form-control" placeholder="Last Name *">
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="col-lg-6 form-group">
-                                <input asp-for="Email" class="form-control" placeholder="Email*">
+                                <input asp-for="Email" class="form-control" placeholder="Email *">
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="col-lg-6 form-group">
-                                <input asp-for="PhoneNumber" class="form-control" placeholder="Phone*">
+                                <input asp-for="PhoneNumber" class="form-control" placeholder="Phone *">
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="col-lg-12 form-group">
-                                <input asp-for="Subject" class="form-control" placeholder="Subject*">
+                                <input asp-for="Subject" class="form-control" placeholder="Subject *">
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="col-lg-12 form-group">
-                                <textarea asp-for="Message" class="form-control" placeholder="Message" cols="30" rows="6"></textarea>
+                                <textarea asp-for="Message" class="form-control" placeholder="Message *" cols="30" rows="6"></textarea>
                                 <div class="help-block with-errors"></div>
                             </div>
+
+                            <div class="col-lg-12 form-group">
+                                <div class="g-recaptcha" data-sitekey="6LeQwXYhAAAAAJe7MUILw7GwhY4RMYMPsg8QnNhS">
+                                </div>
+                            </div>
+
                             <div class="col-lg-12 form-group">
                                 <button type="submit" class="item-btn">Send message</button>
                             </div>
@@ -96,3 +109,7 @@
         </div>
     </div>
 </section>
+
+@section Scripts{
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+}  

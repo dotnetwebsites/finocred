@@ -11,33 +11,33 @@ namespace finocred.web.Models
     {
         [Display(Name = "First Name")]
         [MaxLength(100)]
-        [Required(ErrorMessage = "Required First Name")]
+        [Required(ErrorMessage = "First name required")]
         public string FirstName { get; set; }
 
         [Display(Name = "Last Name")]
-        [Required(ErrorMessage = "Required Last Name")]
+        [Required(ErrorMessage = "Last name required")]
         [MaxLength(100)]
         public string LastName { get; set; }
 
         [Display(Name = "Email Address")]
         [MaxLength(100)]
-        [Required(ErrorMessage = "Required Email")]
+        [Required(ErrorMessage = "Email required")]
         [DataType(DataType.EmailAddress)]
         [EmailAddress(ErrorMessage = "Invalid Email")]
         public string Email { get; set; }
 
         [Column(TypeName = "nvarchar(20)")]
-        [Required(ErrorMessage = "Required mobile no")]
+        [Required(ErrorMessage = "Mobile no required")]
         [MaxLength(10)]
         [MinLength(10, ErrorMessage = "Mobile no must be 10-digit without prefix")]
         [RegularExpression("^[0-9]*$", ErrorMessage = "Mobile no must be numeric")]
         [Display(Name = "Mobile No")]
         public string PhoneNumber { get; set; }
 
-        [Required(ErrorMessage = "Required subject")]
+        [Required(ErrorMessage = "Subject required")]
         public string Subject { get; set; }
 
-        [Required(ErrorMessage = "Required message")]
+        [Required(ErrorMessage = "Message required")]
         public string Message { get; set; }
     }
 }

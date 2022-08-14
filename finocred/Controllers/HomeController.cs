@@ -1,12 +1,17 @@
 ﻿using finocred.BusinessLayer.Interfaces;
 using finocred.Models;
+using finocred.web.BusinessLayer.DTOs;
 using finocred.web.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace finocred.Controllers
@@ -15,11 +20,14 @@ namespace finocred.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IEmailSender _emailSender;
+        private IConfiguration _configuration { get; }
 
-        public HomeController(ILogger<HomeController> logger, IEmailSender emailSender)
+        public HomeController(ILogger<HomeController> logger, IEmailSender emailSender,
+            IConfiguration configuration)
         {
             _logger = logger;
             _emailSender = emailSender;
+            _configuration = configuration;
         }
 
         public IActionResult Index()
@@ -75,11 +83,38 @@ namespace finocred.Controllers
         }
 
         [HttpPost]
-        public IActionResult ContactUs(ContactUs contactUs)
+        [ValidateAntiForgeryToken]
+        public ActionResult ContactUs(ContactUs contactUs)
         {
-            try
+            if (ModelState.IsValid)
             {
-                string htmlContect = @"<p>Hi,</p><p>This mail is triggered by the user who visited on finocred contact us page.</p>
+                try
+                {
+                    string[] blockedcontent = _configuration["blocked_keyword_for_mail"].ToString().Split(",");
+                    bool blocked = false;
+
+                    if (blockedcontent.Contains(contactUs?.FirstName))
+                        blocked = true;
+
+                    if (blockedcontent.Contains(contactUs?.LastName))
+                        blocked = true;
+
+                    if (blockedcontent.Contains(contactUs?.PhoneNumber))
+                        blocked = true;
+
+                    if (blockedcontent.Contains(contactUs?.Subject))
+                        blocked = true;
+
+                    if (blockedcontent.Contains(contactUs?.Message))
+                        blocked = true;
+
+                    if (blocked)
+                    {
+                        ModelState.AddModelError(string.Empty, "The content your are trying to send has been blocked due to some suspicious activities found. If you still want to connect then try to send a valid email.");
+                        return View(contactUs);
+                    }
+
+                    string htmlContect = @"<p>Hi,</p><p>This mail is triggered by the user who visited on finocred contact us page.</p>
                                         <p>Customer details:</p>
                                         <table border='1' cellpadding='1' cellspacing='1' style='width:500px'>
 	                                        <tbody>
@@ -111,29 +146,57 @@ namespace finocred.Controllers
                                         </table>
                                         <p>&nbsp;</p>";
 
-                var mailsts = _emailSender.SendEmail("contact@finocred.com", "finocred", contactUs.Subject, htmlContect);
+                    CaptchaResponse response = ValidateCaptcha(Request.Form["g-recaptcha-response"].ToString());
+                    if (response.Success && ModelState.IsValid)
+                    {
+                        var mailsts = _emailSender.SendEmail("contact@finocred.com", "finocred", contactUs.Subject, htmlContect);
 
-                if (mailsts == MailStatus.NotConfigure)
+                        if (mailsts == MailStatus.NotConfigure)
+                        {
+                            ModelState.AddModelError(string.Empty, "Mail not configure");
+                            return View(contactUs);
+                        }
+                        else if (mailsts == MailStatus.Failed)
+                        {
+                            ModelState.AddModelError(string.Empty, "Mail not sent. Something went wrong.");
+                            return View(contactUs);
+                        }
+
+                        TempData["msg"] = "Thank you for sending an email. Our representative will connect you in 24 hrs.";
+                        return RedirectToAction("ContactUs");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(string.Empty, "Invalid Captcha");
+                        return View(contactUs);
+                    }
+                }
+                catch (Exception ex)
                 {
+                    if (ex.Message.Contains("The server response was: 5.7.0 Authentication"))
+                        ModelState.AddModelError(string.Empty, "The server response was: 5.7.0 Authentication Required.");
+                    else
+                        ModelState.AddModelError(string.Empty, ex.Message);
+
+                    string str = ex.Message;
                     return NoContent();
                 }
-                else if (mailsts == MailStatus.Failed)
-                {
-                    return NoContent();
-                }
-
-                return RedirectToAction("ContactUs");
             }
-            catch (Exception ex)
-            {
-                if (ex.Message.Contains("The server response was: 5.7.0 Authentication"))
-                    ModelState.AddModelError(string.Empty, "The server response was: 5.7.0 Authentication Required.");
-                else
-                    ModelState.AddModelError(string.Empty, ex.Message);
 
-                string str = ex.Message;
-                return NoContent();
-            }            
+            return View(contactUs);
+        }
+
+        /// <summary>  
+        /// Validate Captcha  
+        /// </summary>  
+        /// <param name="response"></param>  
+        /// <returns></returns>  
+        public CaptchaResponse ValidateCaptcha(string response)
+        {
+            string secret = _configuration["captcha:secret"];
+            var client = new WebClient();
+            var jsonResult = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secret, response));
+            return JsonConvert.DeserializeObject<CaptchaResponse>(jsonResult.ToString());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

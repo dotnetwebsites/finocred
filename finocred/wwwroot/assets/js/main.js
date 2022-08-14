@@ -247,7 +247,7 @@ Section background image
     --------------------------------------*/
     if ($.fn.meanmenu) {
         $('nav#dropdown').meanmenu({
-            siteLogo: "<div class='mobile-menu-nav-back'><a class='logo-mobile' href='index.html'><img src='img//logo/logo4.png' alt='logo' class='img-fluid'/></a></div>"
+            siteLogo: "<div class='mobile-menu-nav-back'><a class='logo-mobile' href='index.html'><img src='/assets/img/logo/logo.png' alt='logo' class='img-fluid' width='190'/></a></div>"
         });
     }
     /*-------------------------------------
