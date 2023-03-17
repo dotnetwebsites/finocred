@@ -13,7 +13,7 @@ Copyright (c) Font Awesome
 <defs>
 <font id="FontAwesome5Brands-Regular" horiz-adv-x="448" >
   <font-face 
-    font-family="Font Awesome 5 Brands Regular"
+    font-family="Roboto,Font Awesome 5 Brands Regular"
     font-weight="400"
     font-stretch="normal"
     units-per-em="512"

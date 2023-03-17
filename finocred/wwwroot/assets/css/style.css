@@ -6,7 +6,7 @@ html {
 
 body {
     font-size: 17px;
-    font-family: serif;
+    font-family: Roboto,serif;
     font-weight: 400;
     height: 100%;
     line-height: 28px;
@@ -29,7 +29,7 @@ h4,
 h5,
 h6 {
     font-weight: 400;
-    font-family: serif;
+    font-family: Roboto,serif;
     margin: 0 0 20px 0;
     color: #000000;
 }
@@ -754,7 +754,7 @@ h6 {
 
 .slider-area .nivo-directionNav a.nivo-prevNav:before {
     content: "\f107";
-    font-family: "Font Awesome 5 Free";
+    font-family: "Roboto,Font Awesome 5 Free";
     font-weight: 600;
     cursor: pointer;
     font-size: 24px;
@@ -882,7 +882,7 @@ h6 {
 
 .slider-area .nivo-directionNav a.nivo-nextNav:before {
     content: "\f106";
-    font-family: "Font Awesome 5 Free";
+    font-family: "Roboto,Font Awesome 5 Free";
     font-weight: 600;
     cursor: pointer;
     font-size: 24px;
@@ -947,7 +947,7 @@ h6 {
     color: #0f2641;
     width: 40%;
     padding-left: 20px;
-    font-family: serif;
+    font-family: Roboto,serif;
 }
 
 @media only screen and (max-width: 991px) {
@@ -1392,7 +1392,7 @@ h6 {
     color: #0f2641;
     width: 40%;
     padding-left: 20px;
-    font-family: serif;
+    font-family: Roboto,serif;
 }
 
 @media only screen and (max-width: 991px) {
@@ -2872,13 +2872,13 @@ nav.template-main-menu > ul > li {
         display: block;
         color: #000000;
         /*text-transform: uppercase;*/
-        font-family: serif;
+        font-family: Roboto,serif;
         position: relative;
     }
 
         nav.template-main-menu > ul > li > a:after {
             content: "\f107";
-            font-family: "Font Awesome 5 Free";
+            font-family: "Roboto,Font Awesome 5 Free";
             font-weight: 600;
             color: #646464;
             position: absolute;
@@ -2900,7 +2900,7 @@ nav.template-main-menu2 > ul > li > a {
     display: block;
     color: #000000;
     text-transform: uppercase;
-    font-family: serif;
+    font-family: Roboto,serif;
     position: relative;
 }
 
@@ -2976,7 +2976,7 @@ nav.template-main-menu > ul > li ul.dropdown-menu-col-1 {
 
             nav.template-main-menu > ul > li ul.dropdown-menu-col-1 li a:before {
                 content: "\f30b";
-                font-family: "Font Awesome 5 Free";
+                font-family: "Roboto,Font Awesome 5 Free";
                 font-weight: 600;
                 font-size: 15px;
                 color: #0f2641;
@@ -3297,7 +3297,7 @@ nav.template-main-menu > ul > li:hover .template-mega-menu {
             font-size: 18px;
             font-weight: 700;
             margin-top: -7px;
-            font-family: serif;
+            font-family: Roboto,serif;
         }
 
 @media only screen and (max-width: 1199px) {
@@ -3481,7 +3481,7 @@ nav.template-main-menu > ul > li:hover .template-mega-menu {
         .topbar-left .header-button a {
             color: #fff;
             display: inline-block;
-            font-size: 17px;
+            font-size: 15px;
             transition: all 0.3s ease-in-out;
             position: relative;
         }
@@ -3629,7 +3629,7 @@ nav.template-main-menu > ul > li:hover .template-mega-menu {
         color: #000;
         font-size: 18px;
         font-weight: 700;
-        font-family: serif;
+        font-family: Roboto,serif;
     }
 
 .topbar-right2 ul .header-right-button .header-btn {
@@ -4398,7 +4398,7 @@ div#wrapper.open > .offcanvas-mask {
     font-size: 22px;
     color: #fff;
     margin-top: -35px;
-    font-family: serif;
+    font-family: Roboto,serif;
 }
 
 @media only screen and (max-width: 1199px) {
@@ -4814,7 +4814,7 @@ div#wrapper.open > .offcanvas-mask {
     font-size: 18px;
     font-weight: 700;
     color: #444;
-    font-family: serif;
+    font-family: Roboto,serif;
     position: relative;
     margin-bottom: 10px;
 }
@@ -5148,7 +5148,7 @@ div#wrapper.open > .offcanvas-mask {
     color: #444444;
     font-size: 18px;
     font-weight: 700;
-    font-family: serif;
+    font-family: Roboto,serif;
     position: relative;
     margin-bottom: 10px;
 }
@@ -5426,7 +5426,7 @@ div#wrapper.open > .offcanvas-mask {
             .about-box3 .shape-box .item-shape .item-estimate li span {
                 font-size: 24px;
                 font-weight: 700;
-                font-family: serif;
+                font-family: Roboto,serif;
             }
 
 .about-box3 .about-box8 {
@@ -5609,7 +5609,7 @@ div#wrapper.open > .offcanvas-mask {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 0;
-    font-family: Segoe Print;
+    font-family: Roboto,Segoe Print;
 }
 
 @media only screen and (max-width: 1199px) {
@@ -5829,7 +5829,7 @@ div#wrapper.open > .offcanvas-mask {
             color: #fff;
             font-size: 18px;
             font-weight: 700;
-            font-family: serif;
+            font-family: Roboto,serif;
         }
 
 @media only screen and (max-width: 1199px) {
@@ -6334,7 +6334,7 @@ div#wrapper.open > .offcanvas-mask {
         font-size: 18px;
         font-weight: 700;
         color: #fff;
-        font-family: Lora, serif;
+        font-family: Roboto,Lora, serif;
     }
 
 .banner-wrap6 {
@@ -6392,7 +6392,7 @@ div#wrapper.open > .offcanvas-mask {
     font-size: 18px;
     font-weight: 700;
     position: relative;
-    font-family: serif;
+    font-family: Roboto,serif;
     margin-bottom: 10px;
 }
 
@@ -7261,7 +7261,7 @@ div#wrapper.open > .offcanvas-mask {
     font-weight: 700;
     font-size: 18px;
     margin-right: 15px;
-    font-family: serif;
+    font-family: Roboto,serif;
 }
 
 @media only screen and (max-width: 767px) {
@@ -7308,7 +7308,7 @@ div#wrapper.open > .offcanvas-mask {
         font-weight: 700;
         font-size: 18px;
         margin-right: 15px;
-        font-family: serif;
+        font-family: Roboto,serif;
     }
 
 @media only screen and (max-width: 767px) {
@@ -8080,7 +8080,7 @@ div#wrapper.open > .offcanvas-mask {
     color: #444444;
     font-size: 18px;
     font-weight: 700;
-    font-family: serif;
+    font-family: Roboto,serif;
     position: relative;
     margin-bottom: 10px;
 }
@@ -8494,7 +8494,7 @@ div#wrapper.open > .offcanvas-mask {
     color: #efefef;
     font-size: 60px;
     font-weight: 700;
-    font-family: serif;
+    font-family: Roboto,serif;
 }
 
 @media only screen and (max-width: 1199px) {
@@ -8520,7 +8520,7 @@ div#wrapper.open > .offcanvas-mask {
     color: #0f2641;
     font-size: 18px;
     font-weight: 700;
-    font-family: serif;
+    font-family: Roboto,serif;
     position: relative;
     margin-bottom: 10px;
 }
@@ -8841,7 +8841,7 @@ div#wrapper.open > .offcanvas-mask {
     color: #c1c1c1;
     font-size: 18px;
     font-weight: 700;
-    font-family: serif;
+    font-family: Roboto,serif;
     position: relative;
     margin-bottom: 10px;
 }
@@ -9312,7 +9312,7 @@ div#wrapper.open > .offcanvas-mask {
 
 .single-service-box1 .benefits-area .accordion .card .card-header .heading-title:before {
     content: "\f309";
-    font-family: "Font Awesome 5 Free";
+    font-family: "Roboto,Font Awesome 5 Free";
     height: 100%;
     width: 68px;
     font-size: 16px;
@@ -9343,7 +9343,7 @@ div#wrapper.open > .offcanvas-mask {
 
     .single-service-box1 .benefits-area .accordion .card .card-header .heading-title.collapsed:before {
         content: "\f30b";
-        font-family: "Font Awesome 5 Free";
+        font-family: "Roboto,Font Awesome 5 Free";
         height: 100%;
         width: 68px;
         font-size: 16px;
@@ -10197,7 +10197,7 @@ div#wrapper.open > .offcanvas-mask {
 
 .faq-box .accordion .card .card-header .heading-title:before {
     content: "\f068";
-    font-family: "Font Awesome 5 Free";
+    font-family: "Roboto,Font Awesome 5 Free";
     font-size: 16px;
     font-weight: 600;
     color: #0f2641;
@@ -10216,7 +10216,7 @@ div#wrapper.open > .offcanvas-mask {
 
     .faq-box .accordion .card .card-header .heading-title.collapsed:before {
         content: "\f067";
-        font-family: "Font Awesome 5 Free";
+        font-family: "Roboto,Font Awesome 5 Free";
         font-size: 16px;
         font-weight: 700;
         color: #444;
@@ -10863,7 +10863,7 @@ div#wrapper.open > .offcanvas-mask {
     font-size: 18px;
     margin-bottom: 10px;
     font-weight: 700;
-    font-family: serif;
+    font-family: Roboto,serif;
 }
 
 .location-wrap-layout1 .item-heading .section-heading {
@@ -12155,7 +12155,7 @@ div#wrapper.open > .offcanvas-mask {
     color: #0f2641;
     font-size: 18px;
     font-weight: 700;
-    font-family: serif;
+    font-family: Roboto,serif;
     position: relative;
     margin-bottom: 10px;
 }
@@ -12436,7 +12436,7 @@ div#wrapper.open > .offcanvas-mask {
     color: #0f2641;
     font-size: 18px;
     font-weight: 700;
-    font-family: serif;
+    font-family: Roboto,serif;
     position: relative;
     margin-bottom: 10px;
 }
@@ -12678,7 +12678,7 @@ div#wrapper.open > .offcanvas-mask {
         color: #0f2641;
         font-size: 18px;
         font-weight: 700;
-        font-family: serif;
+        font-family: Roboto,serif;
         position: relative;
         margin-bottom: 10px;
     }
@@ -12926,7 +12926,7 @@ div#wrapper.open > .offcanvas-mask {
         color: #0f2641;
         font-size: 18px;
         font-weight: 700;
-        font-family: serif;
+        font-family: Roboto,serif;
     }
 
     .team-wrap-layout2 .section-content .section-title {
@@ -13345,7 +13345,7 @@ div#wrapper.open > .offcanvas-mask {
     color: #0f2641;
     font-size: 18px;
     font-weight: 700;
-    font-family: serif;
+    font-family: Roboto,serif;
     position: relative;
     margin-bottom: 10px;
 }
@@ -13809,7 +13809,7 @@ div#wrapper.open > .offcanvas-mask {
     color: #d7d7d7;
     font-size: 20px;
     line-height: 38px;
-    font-family: serif;
+    font-family: Roboto,serif;
     font-style: italic;
 }
 
@@ -13927,7 +13927,7 @@ div#wrapper.open > .offcanvas-mask {
 
 .testimonial-box1 .slick-arrow:before {
     content: "\f107";
-    font-family: "Font Awesome 5 Free";
+    font-family: "Roboto,Font Awesome 5 Free";
     color: #fff;
     font-size: 24px;
     font-weight: 700;
@@ -14063,7 +14063,7 @@ div#wrapper.open > .offcanvas-mask {
     color: #444444;
     font-size: 18px;
     font-weight: 700;
-    font-family: serif;
+    font-family: Roboto,serif;
     position: relative;
     margin-bottom: 10px;
 }
@@ -14296,7 +14296,7 @@ div#wrapper.open > .offcanvas-mask {
 
     .testimonial-box2 .slick-arrow:before {
         content: "\f30b";
-        font-family: "Font Awesome 5 Free";
+        font-family: "Roboto,Font Awesome 5 Free";
         color: #646464;
         font-size: 16px;
         font-weight: 700;
@@ -14366,7 +14366,7 @@ div#wrapper.open > .offcanvas-mask {
 
 .testimonial-box3 .slick-arrow:before {
     content: "\f105";
-    font-family: "Font Awesome 5 Free";
+    font-family: "Roboto,Font Awesome 5 Free";
     color: #0f2641;
     font-size: 24px;
     font-weight: 700;
@@ -14442,7 +14442,7 @@ div#wrapper.open > .offcanvas-mask {
         color: #fff;
         font-size: 26px;
         line-height: 40px;
-        font-family: serif;
+        font-family: Roboto,serif;
         font-style: italic;
         padding-right: 150px;
         padding-left: 182px;
@@ -14641,7 +14641,7 @@ div#wrapper.open > .offcanvas-mask {
 
 .choose-us-box1 .accordion .card .card-header .heading-title:before {
     content: "\f068";
-    font-family: "Font Awesome 5 Free";
+    font-family: "Roboto,Font Awesome 5 Free";
     height: 45px;
     width: 45px;
     font-size: 16px;
@@ -14667,7 +14667,7 @@ div#wrapper.open > .offcanvas-mask {
 
     .choose-us-box1 .accordion .card .card-header .heading-title.collapsed:before {
         content: "\f067";
-        font-family: "Font Awesome 5 Free";
+        font-family: "Roboto,Font Awesome 5 Free";
         height: 45px;
         width: 45px;
         font-size: 16px;

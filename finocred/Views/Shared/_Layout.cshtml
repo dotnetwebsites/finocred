@@ -20,11 +20,16 @@
     <link rel="stylesheet" href="~/assets/css/all.min.css">
     <link rel="stylesheet" href="~/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com/">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&amp;display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
     <link rel="canonical" href="/home">
     <style>
+        body {
+            font-family: 'Roboto';
+        }
+
         .counter {
             background-color: #8300ff;
             padding: 20px 0;
@@ -64,7 +69,10 @@
                         <div class="col-lg-4 ">
                             <div class="topbar-left">
                                 <div class="header-button">
-                                    <a href="mailto:contact@finocred.com"><img src="~/assets/img/email.png" class="img">contact@finocred.com</a>
+                                    <a href="mailto:contact@finocred.com">
+                                        <img src="~/assets/img/email.png" class="img">
+                                        <span style="margin-left: 3px;">contact@finocred.com</span>
+                                    </a>
                                 </div>
                                 <div class="header-button">
                                     <a href="tel:+919399938906"><img src="~/assets/img/call%20us.png" class="img"> +91 93999 38906</a>
@@ -222,8 +230,11 @@
                     <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
                         <div class="footer-right">
                             <h2 class="footer-title">Contact Us</h2>
-                            <p style="font-size:14px;">
-                                <img src="~/assets/img/map.png" class="img">Sangam Tower, Zone-I, MP Nagar, Bhopal MP, 462023
+                            <p>
+                                <img src="~/assets/img/map.png" class="img">
+                                <span style="text-align:justify">3rd Floor, Sangam Tower, Zone 1</span>
+                                <br>
+                                <span style="margin-left: 36px;">MP Nagar, Bhopal MP, 462023</span>
                             </p>
                             <p><img src="~/assets/img/call%20us.png" class="img"> +91-9111 666 981</p>
                             <p><img src="~/assets/img/call%20us.png" class="img"> +91-9399 938 906</p>
@@ -238,7 +249,7 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-12">
                             <div class="copyright-area">
-                                <p>Copyright © @DateTime.Now.Year All Rights Reserved. Finocred Finserv @GetType().Assembly.GetName().Version.ToString()v</p>
+                                <p>Copyright © @DateTime.Now.Year All Rights Reserved. @Html.Raw("v" + GetType().Assembly.GetName().Version.ToString())</p>
                                 <div class="copyright-img1">
                                     <img src="~/assets/img/figure/figure4.png" alt="figure" width="20" height="20">
                                 </div>
