@@ -1,0 +1,76 @@
+﻿@model ApplyDTO
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="call-back-wrap" style="background: #8300ff;">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-lg-6 col-md-6">
+                <div class="call-back-box1" style="background: none;">
+                    @if (TempData["Msg"] != null)
+                    {
+                        <h2 class="section-title">Details Submitted!</h2>
+                    }
+                    else
+                    {
+                        <h2 class="section-title">Fill the basic details</h2>
+                    }
+                    <form class="message-box" method="POST">
+                        <div asp-validation-summary="All" style="color:#fff"></div>
+                        @if (TempData["Msg"] != null)
+                        {
+                            <div style="color:#fff">@TempData["Msg"].ToString()</div>
+                        }
+                        else
+                        {
+                            <div class="row">
+                                <div class="form-group col-lg-12">
+
+                                    <input asp-for="FullName" class="form-control">
+                                    <div class="invalid-feedback">Please Enter Your Name.</div>
+                                </div>
+                                <div class="form-group col-lg-12">
+
+                                    <input asp-for="MobileNo" class="form-control">
+                                    <div class="invalid-feedback">Please Enter Mobile Number.</div>
+                                </div>
+                                <div class="form-group col-lg-12">
+
+                                    <input asp-for="Pincode" class="form-control">
+                                    <div class="invalid-feedback">Please Enter Pincode.</div>
+                                </div>
+                                <div class="form-group col-lg-12">
+
+                                    <select asp-for="ApplyFor" class="form-control">
+                                        <option value="">Apply For*</option>
+                                        @foreach (ApplyFor applyFor in Enum.GetValues(typeof(ApplyFor)))
+                                        {
+                                            <option value="@((int)applyFor)">@applyFor.ToString().Replace("_", " ")</option>
+                                        }
+                                    </select>
+                                    <div class="invalid-feedback">Please Select Loan.</div>
+                                </div>
+
+
+                                <div class="form-group col-lg-12">
+                                    <input type="submit" value="Submit" class="item-btn btn-block">
+                                </div>
+
+                                <div class="form-group col-lg-12">
+                                    <p style="color:#ffff">
+                                        We never ask for OTP | Password | Bank Details | Credit Card Number | CVV. Do not submit such details through the form.
+                                    </p>
+                                </div>
+
+                            </div>
+                        }
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

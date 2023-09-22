@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace finocred.Controllers
@@ -80,6 +81,37 @@ namespace finocred.Controllers
         public IActionResult EmiCalculator()
         {
             return View();
+        }
+
+        [HttpGet]
+        [Route("applynow")]
+        public IActionResult ApplyNow()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("applynow")]
+        public async Task<IActionResult> ApplyNow(ApplyDTO model)
+        {
+            if (ModelState.IsValid)
+            {
+                var jsonData = JsonConvert.SerializeObject(model);
+
+                var client = new HttpClient();
+                var request = new HttpRequestMessage(HttpMethod.Post, _configuration["baseUrl"] + "api/basicdetails/");
+
+                request.Content = new StringContent(jsonData, null, "application/json");
+                var response = await client.SendAsync(request);
+                response.EnsureSuccessStatusCode();
+
+                var result = await response.Content.ReadAsStringAsync();
+
+                TempData["Msg"] = "Thank you for submitting the details. Our representative will contact you shortly.";
+                return RedirectToAction("applynow");
+            }
+
+            return View(model);
         }
 
         [HttpPost]

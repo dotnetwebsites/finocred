@@ -7955,9 +7955,9 @@ div#wrapper.open > .offcanvas-mask {
 }
 
 .call-back-box1 .message-box .form-group .form-control {
-    color: #afacac;
+    /*color: #afacac;*/
     background-color: white;
-    border-color: #afacac;
+    /*border-color: #afacac;*/
 }
 
     .call-back-box1 .message-box .form-group .form-control:focus {

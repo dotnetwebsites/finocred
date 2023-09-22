@@ -58,7 +58,9 @@
 </head>
 <body class="sticky-header">
     <div class="wrapper" id="wrapper">
-        <img src="https://app.finocred.com/images/icon.jpg" height="1" width="1" />
+        <div style="height:0px">
+            <img src="https://app.finocred.com/images/icon.jpg" height="1" width="1" />
+        </div>
         <header class="header">
             <div id="header-topbar" class="header-topbar-layout1">
                 <div class="container">
@@ -70,12 +72,12 @@
                             <div class="topbar-left">
                                 <div class="header-button">
                                     <a href="mailto:contact@finocred.com">
-                                        <img src="~/assets/img/email.png" class="img">
+                                        <img src="/assets/img/email.png" class="img">
                                         <span style="margin-left: 3px;">contact@finocred.com</span>
                                     </a>
                                 </div>
                                 <div class="header-button">
-                                    <a href="tel:+919399938906"><img src="~/assets/img/call%20us.png" class="img"> +91 93999 38906</a>
+                                    <a href="tel:+919399938906"><img src="/assets/img/call%20us.png" class="img"> +91 93999 38906</a>
                                 </div>
 
                             </div>
@@ -84,7 +86,7 @@
                             <div class="topbar-right">
 
                                 <div class="header-right-button">
-                                    <a href="https://webmail.finocred.com/login.php" target="_blank" class="header-btn">Webmail Login</a>
+                                    <a href="https://webmail.finocred.com" target="_blank" class="header-btn">Webmail Login</a>
                                 </div>
                                 <div class="header-right-button">
                                     <a href="/home/partner" target="_blank" class="header-btn">Partner With Us</a>
@@ -101,7 +103,7 @@
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo-area">
                                 <a asp-action="index" asp-controller="home" class="temp-logo">
-                                    <img src="~/assets/img/logo/logo.png" alt="logo">
+                                    <img src="/assets/img/logo/logo.png" alt="logo">
                                 </a>
                             </div>
                         </div>
@@ -114,14 +116,6 @@
                                     <li>
                                         <a asp-action="aboutus" asp-controller="home">About Us</a>
                                     </li>
-                                    @*<li>
-                                            <a href="javascript:;">About Us</a>
-                                            <ul class="dropdown-menu-col-1">
-                                                <li><a asp-action="aboutus" asp-controller="home">About Us</a></li>
-                                                <li><a href="https://finocred.com/ourteam.html">Our Team</a></li>
-                                                <li><a href="https://finocred.com/gallery.html">Gallery</a></li>
-                                            </ul>
-                                        </li>*@
                                     <li>
                                         <a asp-action="personal" asp-controller="loans">Personal Loan</a>
                                     </li>
@@ -163,13 +157,13 @@
         <!--End of Tawk.to Script-->
 
         <div style="position: fixed; bottom: 80px; z-index: 999999;">
-            <a href="/home/emicalculator"><img src="~/assets/img/emi.png"></a>
+            <a href="/home/emicalculator"><img src="/assets/img/emi.png"></a>
         </div>
         <div style="position: fixed; bottom: 200px; right:2px; z-index: 999999;">
-            <a href="tel:+919399938906"><img src="~/assets/img/callus.png"></a>
+            <a href="tel:+919399938906"><img src="/assets/img/callus.png"></a>
         </div>
         <div style="position: fixed; bottom: 80px;right:2px; z-index: 999999;">
-            <a href="https://api.whatsapp.com/send?phone=919399938906"><img src="~/assets/img/whatsapp.png"></a>
+            <a href="https://api.whatsapp.com/send?phone=919399938906"><img src="/assets/img/whatsapp.png"></a>
         </div>
 
         <footer class="footer-area1">
@@ -179,7 +173,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
                         <div class="footer-left">
                             <div class="footer-logo">
-                                <a href="#"><img src="~/assets/img/logo/logo.png" alt="logo" width="200px" height="70px"></a>
+                                <a href="#"><img src="/assets/img/logo/logo.png" alt="logo" width="200px" height="70px"></a>
                             </div>
                             <p>
                                 Partnered with leading banks & NBFC’s PAN India, Finocred Finserv is India's No.1
@@ -189,11 +183,11 @@
                             <div class="footer-social">
                                 <ul>
                                     <li>
-                                        <a href="https://www.facebook.com/finocredfinserv" class="fb" target="_blank"><img src="~/assets/img/fb.png"></a>
-                                        <a href="https://twitter.com/finocred" class="twit" target="_blank"><img src="~/assets/img/twt.png"></a>
-                                        <a href="https://www.linkedin.com/company/finocred" class="linkin" target="_blank"><img src="~/assets/img/linkedin.png"></a>
-                                        <a href="https://www.instagram.com/finocred/?hl=en" class="pint" target="_blank"><img src="~/assets/img/inst.png"></a>
-                                        <a href="https://www.youtube.com/channel/UC3LKpp2fujyaoEnk34RjN0A" class="pint" target="_blank"><img src="~/assets/img/tube.png"></a>
+                                        <a href="https://www.facebook.com/finocredfinserv" class="fb" target="_blank"><img src="/assets/img/fb.png"></a>
+                                        <a href="https://twitter.com/finocred" class="twit" target="_blank"><img src="/assets/img/twt.png"></a>
+                                        <a href="https://www.linkedin.com/company/finocred" class="linkin" target="_blank"><img src="/assets/img/linkedin.png"></a>
+                                        <a href="https://www.instagram.com/finocred/?hl=en" class="pint" target="_blank"><img src="/assets/img/inst.png"></a>
+                                        <a href="https://www.youtube.com/channel/UC3LKpp2fujyaoEnk34RjN0A" class="pint" target="_blank"><img src="/assets/img/tube.png"></a>
                                     </li>
                                 </ul>
                             </div>
@@ -231,14 +225,14 @@
                         <div class="footer-right">
                             <h2 class="footer-title">Contact Us</h2>
                             <p>
-                                <img src="~/assets/img/map.png" class="img">
+                                <img src="/assets/img/map.png" class="img">
                                 <span style="text-align:justify">3rd Floor, Sangam Tower, Zone 1</span>
                                 <br>
                                 <span style="margin-left: 36px;">MP Nagar, Bhopal MP, 462023</span>
                             </p>
-                            <p><img src="~/assets/img/call%20us.png" class="img"> +91-9111 666 981</p>
-                            <p><img src="~/assets/img/call%20us.png" class="img"> +91-9399 938 906</p>
-                            <p><img src="~/assets/img/email.png" class="img"> contact@finocred.com</p>
+                            <p><img src="/assets/img/call%20us.png" class="img"> +91-9111 666 981</p>
+                            <p><img src="/assets/img/call%20us.png" class="img"> +91-9399 938 906</p>
+                            <p><img src="/assets/img/email.png" class="img"> contact@finocred.com</p>
 
                         </div>
                     </div>
@@ -251,10 +245,10 @@
                             <div class="copyright-area">
                                 <p>Copyright © @DateTime.Now.Year All Rights Reserved. @Html.Raw("v" + GetType().Assembly.GetName().Version.ToString())</p>
                                 <div class="copyright-img1">
-                                    <img src="~/assets/img/figure/figure4.png" alt="figure" width="20" height="20">
+                                    <img src="/assets/img/figure/figure4.png" alt="figure" width="20" height="20">
                                 </div>
                                 <div class="copyright-img2">
-                                    <img src="~/assets/img/figure/figure4.png" alt="figure" width="20" height="20">
+                                    <img src="/assets/img/figure/figure4.png" alt="figure" width="20" height="20">
                                 </div>
                             </div>
                         </div>
