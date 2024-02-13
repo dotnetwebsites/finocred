@@ -94,24 +94,32 @@ namespace finocred.Controllers
         [Route("applynow")]
         public async Task<IActionResult> ApplyNow(ApplyDTO model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                var jsonData = JsonConvert.SerializeObject(model);
+                if (ModelState.IsValid)
+                {
+                    var jsonData = JsonConvert.SerializeObject(model);
 
-                var client = new HttpClient();
-                var request = new HttpRequestMessage(HttpMethod.Post, _configuration["baseUrl"] + "api/basicdetails/");
+                    var client = new HttpClient();
+                    var request = new HttpRequestMessage(HttpMethod.Post, _configuration["baseUrl"] + "api/basicdetails/");
 
-                request.Content = new StringContent(jsonData, null, "application/json");
-                var response = await client.SendAsync(request);
-                response.EnsureSuccessStatusCode();
+                    request.Content = new StringContent(jsonData, null, "application/json");
+                    var response = await client.SendAsync(request);
+                    response.EnsureSuccessStatusCode();
 
-                var result = await response.Content.ReadAsStringAsync();
+                    var result = await response.Content.ReadAsStringAsync();
 
-                TempData["Msg"] = "Thank you for submitting the details. Our representative will contact you shortly.";
-                return RedirectToAction("applynow");
+                    TempData["Msg"] = "Thank you for submitting the details. Our representative will contact you shortly.";
+                    return RedirectToAction("applynow");
+                }
+
+                return View(model);
             }
-
-            return View(model);
+            catch (Exception ex)
+            {
+                model.FullName = ex.Message;
+                return View(model);
+            }            
         }
 
         [HttpPost]
